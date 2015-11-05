@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+
+    <div id="example">
+    </div>
+
+    <div id="example2">
+    </div>
+
+    <div id="example3">
+    </div>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+    <script src="textures.min.js" charset="utf-8"></script>
+
+  <script>
+      var w = 150,
+          h = 150;
+      var svg = d3.select("#example")
+          .append("svg")
+          .attr("width",w)
+          .attr("height", h);
+      var t = textures.lines()
+          .stroke("darkorange")
+          .thicker();
+      svg.call(t);
+      svg.append("circle")
+          .attr({
+              "cx": w/2,
+              "cy": h/2,
+              "r": 60
+          })
+          .style({
+              "fill": t.url(),
+              "stroke": "darkorange",
+              "stroke-width": 2
+          });
+
+    </script>
+
+
+
+
+    <script>
+        var w = 150,
+            h = 150;
+        var svg = d3.select("#example2")
+            .append("svg")
+            .attr("width",w)
+            .attr("height", h);
+        var t = textures.lines()
+            .stroke("blue")
+            .thicker();
+        svg.call(t);
+        svg.append("circle")
+            .attr({
+                "cx": w/2,
+                "cy": h/2,
+                "r": 60
+            })
+            .style({
+                "fill": t.url(),
+                "stroke": "blue",
+                "stroke-width": 2
+            });
+      </script>
+
+
+
+      <script>
+          var w = 150,
+              h = 150;
+          var svg = d3.select("#example3")
+              .append("svg")
+              .attr("width",w)
+              .attr("height", h);
+          var t = textures.paths()
+              .d("crosses")
+              .lighter()
+              .thicker();
+          svg.call(t);
+          svg.append("circle")
+              .attr({
+                  "cx": w/2,
+                  "cy": h/2,
+                  "r": 60
+              })
+              .style({
+                  "fill": t.url(),
+                  "stroke": "darkorange",
+                  "stroke-width": 2
+              });
+        </script>
+
+
+
+
+  </body>
+</html>
